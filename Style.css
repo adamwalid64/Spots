@@ -22,9 +22,16 @@ div.top-bar {
    background-color: #A2CFFE;
 }
 
-div.top-bar-logo {
+/* Logo Div */
+div.top-bar-logo-div {
    
 }
+
+#top-bar-logo {
+   height: 20px;
+}
+
+
 
 /* Footer  */
 footer{
