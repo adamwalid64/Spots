@@ -20,6 +20,10 @@ div.top-bar {
 
    /* Color */
    background-color: #A2CFFE;
+
+   /* Flex attributes */
+   justify-content: center;
+
 }
 
 /* Logo Div */
@@ -28,7 +32,9 @@ div.top-bar-logo-div {
 }
 
 #top-bar-logo {
-   height: 20px;
+   position: relative;
+   width: 22.7vh; 
+   height: auto;
 }
 
 
