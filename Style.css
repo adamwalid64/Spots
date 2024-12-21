@@ -23,20 +23,35 @@ div.top-bar {
 
    /* Flex attributes */
    justify-content: center;
-
 }
 
 /* Logo Div */
-div.top-bar-logo-div {
+#top-bar-logo {
+   width: 22.7vh; 
+   height: auto;
+
+}
+
+/* Button Container ----------------*/
+.top-bar-button-container {
+   position: absolute;
+   width: 15vw;
+   height: 7.5vh;
+   right: 5vh;
+   top: 4vh;
+
+   display: flex;
+   justify-content: center;
+   gap: 1vw;
+}
+/* Buttons */
+.btn, .btn-primary{
    
 }
 
-#top-bar-logo {
-   position: relative;
-   width: 22.7vh; 
-   height: auto;
-}
+.btn, .btn-outline-primary {
 
+}
 
 
 /* Footer  */
