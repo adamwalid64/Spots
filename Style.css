@@ -56,7 +56,7 @@ div.top-bar {
 /* Dropdown Button Container */
 .Social-drop-down{
    position: absolute;
-   width: 15vw;
+   width: 7vw;
    height: 7.5vh;
    left: 10vh;
    top: 4vh;
@@ -69,6 +69,19 @@ div.top-bar {
 .btn, .btn-primary, .dropdown-toggle {
 
 }
+
+/* Social Media icons */
+.fa-facebook {
+   color: white;
+ }
+ 
+ .fa-twitter {
+   color: white;
+ }
+
+ .fa-instagram {
+   color: white;
+ }
 
 /* Footer  */
 footer{
