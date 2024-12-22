@@ -32,7 +32,7 @@ div.top-bar {
 
 }
 
-/* Button Container ----------------*/
+/* Sign/in/up Container ----------------*/
 .top-bar-button-container {
    position: absolute;
    width: 15vw;
@@ -53,6 +53,22 @@ div.top-bar {
 
 }
 
+/* Dropdown Button Container */
+.Social-drop-down{
+   position: absolute;
+   width: 15vw;
+   height: 7.5vh;
+   left: 10vh;
+   top: 4vh;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+/* Social Media dropdown */
+.btn, .btn-primary, .dropdown-toggle {
+
+}
 
 /* Footer  */
 footer{
