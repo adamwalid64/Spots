@@ -20,18 +20,68 @@ div.top-bar {
 
    /* Color */
    background-color: #A2CFFE;
+
+   /* Flex attributes */
+   justify-content: center;
 }
 
 /* Logo Div */
-div.top-bar-logo-div {
+#top-bar-logo {
+   width: 22.7vh; 
+   height: auto;
+
+}
+
+/* Sign/in/up Container ----------------*/
+.top-bar-button-container {
+   position: absolute;
+   width: 15vw;
+   height: 7.5vh;
+   right: 5vh;
+   top: 4vh;
+
+   display: flex;
+   justify-content: center;
+   gap: 1vw;
+}
+/* Buttons */
+.btn, .btn-primary{
    
 }
 
-#top-bar-logo {
-   height: 20px;
+.btn, .btn-outline-primary {
+
 }
 
+/* Dropdown Button Container */
+.Social-drop-down{
+   position: absolute;
+   width: 7vw;
+   height: 7.5vh;
+   left: 10vh;
+   top: 4vh;
 
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+/* Social Media dropdown */
+.btn, .btn-primary, .dropdown-toggle {
+
+}
+
+/* Social Media icons */
+.fa-facebook {
+   color: white;
+ }
+ 
+ .fa-twitter {
+   color: white;
+ }
+
+ .fa-instagram {
+   color: white;
+ }
 
 /* Footer  */
 footer{
