@@ -1,95 +1,83 @@
-
-/* Body CSS -------------------------*/
 body {
- background-color: #D3D3D3;
+   background-color: #D3D3D3;
+   display: grid;
+   grid-template-rows: 1fr 10rem auto;
+   grid-template-areas: "main" "." "footer";
+   overflow-x: hidden;
+   background: #F5F7FA;
+   min-height: 100vh;
+   font-family: 'Open Sans', sans-serif;
 }
 
-/* Top Bar CSS ----------------------*/
 div.top-bar {
-   /* Properties */
    position: absolute;
    display: flex;
-   
-   /* Height/Width */
    width: 100%;
    height: 15vh;
-
-   /* Allignment */
    top: 0;
    left: 0;
-
-   /* Color */
    background-color: #A2CFFE;
-
-   /* Flex attributes */
    justify-content: center;
 }
 
-/* Logo Div */
 #top-bar-logo {
-   width: 22.7vh; 
+   width: 22.7vh;
    height: auto;
-
 }
 
-/* Sign/in/up Container ----------------*/
 .top-bar-button-container {
    position: absolute;
    width: 15vw;
    height: 7.5vh;
    right: 5vh;
    top: 4vh;
-
    display: flex;
    justify-content: center;
    gap: 1vw;
 }
-/* Buttons */
-.btn, .btn-primary{
-   
+
+.btn, .btn-primary {
 }
 
 .btn, .btn-outline-primary {
-
 }
 
-/* Dropdown Button Container */
-.Social-drop-down{
+.Social-drop-down {
    position: absolute;
    width: 7vw;
    height: 7.5vh;
    left: 10vh;
    top: 4vh;
-
    display: flex;
    justify-content: center;
    align-items: center;
 }
-/* Social Media dropdown */
-.btn, .btn-primary, .dropdown-toggle {
 
+.btn, .btn-primary, .dropdown-toggle {
 }
 
-/* Social Media icons */
 .fa-facebook {
    color: white;
- }
- 
- .fa-twitter {
-   color: white;
- }
+}
 
- .fa-instagram {
+.fa-twitter {
    color: white;
- }
+}
 
-/* Footer  */
-footer{
+.fa-instagram {
+   color: white;
+}
+
+footer {
    position: fixed;
    bottom: 0;
    width: 100%;
    background-color: #A2CFFE;
    border-top: 2px solid #BAA896;
+   display: grid;
+   position: relative;
+   grid-area: footer;
+   min-height: 12rem;
 }
 
 .footer-nav {
@@ -98,7 +86,6 @@ footer{
    padding: 10px 0;
 }
 
-/* Footer Button Styling */
 .footer-button {
    appearance: none;
    background-color: #A2CFFE;
@@ -122,48 +109,51 @@ footer{
    text-rendering: geometricprecision;
    text-transform: uppercase;
    transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),
-     background-color 100ms cubic-bezier(.694, 0, 0.335, 1),
-     color 100ms cubic-bezier(.694, 0, 0.335, 1);
+       background-color 100ms cubic-bezier(.694, 0, 0.335, 1),
+       color 100ms cubic-bezier(.694, 0, 0.335, 1);
    user-select: none;
    -webkit-user-select: none;
    touch-action: manipulation;
    vertical-align: baseline;
    white-space: nowrap;
    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
- }
- 
- .footer-button:before {
-   animation: opacityFallbackOut 0.5s step-end forwards;
-   backface-visibility: hidden;
-   background-color: rgba(255, 255, 255, 0.2);
-   clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
-   content: "";
-   height: 100%;
-   left: 0;
-   position: absolute;
-   top: 0;
-   transform: translateZ(0);
-   transition: clip-path 0.5s cubic-bezier(.165, 0.84, 0.44, 1),
-     -webkit-clip-path 0.5s cubic-bezier(.165, 0.84, 0.44, 1);
-   width: 100%;
- }
- 
- .footer-button:hover:before {
-   animation: opacityFallbackIn 0s step-start forwards;
-   clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
- }
- 
- .footer-button:hover {
-   color: #000000;
-   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
- }
- 
- .footer-button span {
-   z-index: 1;
-   position: relative;
- }
+   border-radius: 8px;
+}
 
-/* Responsiveness */
+.footer-button:before {
+   content: '';
+   display: block;
+   position: absolute;
+   top: -6px;
+   left: -6px;
+   right: -6px;
+   bottom: -6px;
+   border: 2px solid #A2CFFE;
+   border-radius: 8px;
+   opacity: 0;
+   transition: all 300ms cubic-bezier(.694, 0, 0.335, 1);
+}
+
+.footer-button:hover {
+   background-color: #8EACE4;
+   color: #ffffff;
+}
+
+.footer-button:hover:before {
+   opacity: 1;
+   transform: scale(1.1);
+}
+
+.footer-button:active {
+   background-color: #6D94C7;
+   color: #ffffff;
+}
+
+.footer-button:active:before {
+   transform: scale(1.05);
+   opacity: 0.9;
+}
+
 @media screen and (max-width: 768px) {
    nav {
        flex-direction: column;
