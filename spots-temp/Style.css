@@ -1,150 +1,200 @@
 
 /* Body CSS -------------------------*/
 body {
-   background-color: #D3D3D3;
-  }
-  
-  /* Top Bar CSS ----------------------*/
-  div.top-bar {
-     /* Properties */
-     position: absolute;
-     display: flex;
-     
-     /* Height/Width */
-     width: 100%;
-     height: 15vh;
-  
-     /* Allignment */
-     top: 0;
-     left: 0;
-  
-     /* Color */
-     background-color: #A2CFFE;
-  
-     /* Flex attributes */
-     justify-content: center;
-  }
-  
-  /* Logo Div */
-  #top-bar-logo {
-     width: 22.7vh; 
-     height: auto;
-  
-  }
-  
-  /* Sign/in/up Container ----------------*/
-  .top-bar-button-container {
-     position: absolute;
-     width: 15vw;
-     height: 7.5vh;
-     right: 5vh;
-     top: 4vh;
-  
-     display: flex;
-     justify-content: center;
-     gap: 1vw;
-  }
-  /* Buttons */
-  .btn, .btn-primary{
-     
-  }
-  
-  .btn, .btn-outline-primary {
-  
-  }
-  
-  /* Dropdown Button Container */
-  .Social-drop-down{
-     position: absolute;
-     width: 7vw;
-     height: 7.5vh;
-     left: 10vh;
-     top: 4vh;
-  
-     display: flex;
-     justify-content: center;
-     align-items: center;
-  }
-  /* Social Media dropdown */
-  .btn, .btn-primary, .dropdown-toggle {
-  
-  }
-  
-  /* Social Media icons */
-  .fa-facebook {
-     color: white;
-   }
+ background-color: #D3D3D3;
+}
+
+/* Top Bar CSS ----------------------*/
+div.top-bar {
+   /* Properties */
+   position: absolute;
+   display: flex;
    
-   .fa-twitter {
-     color: white;
+   /* Height/Width */
+   width: 100%;
+   height: 15vh;
+
+   /* Allignment */
+   top: 0;
+   left: 0;
+
+   /* Color */
+   background-color: #A2CFFE;
+
+   /* Flex attributes */
+   justify-content: center;
+}
+
+/* Logo Div */
+#top-bar-logo {
+   width: 22.7vh; 
+   height: auto;
+
+}
+
+/* Sign/in/up Container ----------------*/
+.top-bar-button-container {
+   position: absolute;
+   width: 15vw;
+   height: 7.5vh;
+   right: 5vh;
+   top: 4vh;
+
+   display: flex;
+   justify-content: center;
+   gap: 1vw;
+}
+/* Buttons */
+.btn, .btn-primary{
+   
+}
+
+.btn, .btn-outline-primary {
+
+}
+
+/* Dropdown Button Container */
+.Social-drop-down{
+   position: absolute;
+   width: 7vw;
+   height: 7.5vh;
+   left: 10vh;
+   top: 4vh;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+/* Social Media dropdown */
+.btn, .btn-primary, .dropdown-toggle {
+
+}
+
+/* Social Media icons */
+.fa-facebook {
+   color: white;
+ }
+ 
+ .fa-twitter {
+   color: white;
+ }
+
+ .fa-instagram {
+   color: white;
+ }
+
+/* Footer  */
+footer{
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+   background-color: #A2CFFE;
+   border-top: 2px solid #BAA896;
+}
+
+.footer-nav {
+   display: flex;
+   justify-content: space-around;
+   padding: 10px 0;
+}
+
+/* Footer Button Styling */
+.footer-button {
+   appearance: none;
+   background-color: #FFFFFF;
+   border-width: 0;
+   box-sizing: border-box;
+   color: #000000;
+   cursor: pointer;
+   display: inline-block;
+   font-family: Clarkson, Helvetica, sans-serif;
+   font-size: 14px;
+   font-weight: 500;
+   letter-spacing: 0;
+   line-height: 1em;
+   margin: 0;
+   opacity: 1;
+   outline: 0;
+   padding: 1.5em 2.2em;
+   position: relative;
+   text-align: center;
+   text-decoration: none;
+   text-rendering: geometricprecision;
+   text-transform: uppercase;
+   transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),
+     background-color 100ms cubic-bezier(.694, 0, 0.335, 1),
+     color 100ms cubic-bezier(.694, 0, 0.335, 1);
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+   vertical-align: baseline;
+   white-space: nowrap;
+ }
+ 
+ .footer-button:before {
+   animation: opacityFallbackOut 0.5s step-end forwards;
+   backface-visibility: hidden;
+   background-color: #ebebeb;
+   clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+   content: "";
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 0;
+   transform: translateZ(0);
+   transition: clip-path 0.5s cubic-bezier(.165, 0.84, 0.44, 1),
+     -webkit-clip-path 0.5s cubic-bezier(.165, 0.84, 0.44, 1);
+   width: 100%;
+ }
+ 
+ .footer-button:hover:before {
+   animation: opacityFallbackIn 0s step-start forwards;
+   clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+ }
+ 
+ .footer-button:after {
+   background-color: #ffffff;
+ }
+ 
+ .footer-button span {
+   z-index: 1;
+   position: relative;
+ }
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+   nav {
+       flex-direction: column;
+       align-items: center;
    }
-  
-   .fa-instagram {
-     color: white;
+
+   nav a {
+       display: block;
+       width: 100%;
+       text-align: center;
+       padding: 10px 0;
    }
-  
-  /* Footer  */
-  footer{
-     position: fixed;
-     bottom: 0;
-     width: 100%;
-     background-color: #A2CFFE;
-     border-top: 2px solid #BAA896;
-  }
-  
-  .footer-nav {
-     display: flex;
-     justify-content: space-around;
-     padding: 10px 0;
-  }
-  
-  .footer-nav a {
-     color: #F3F3F2;
-     text-decoration: none;
-     padding: 8px 16px;
-     text-align: center;
-     font-size: 14px;
-  }
-  
-  .footer-nav a:hover {
-     background-color: #575757;
-     border-radius: 4px;
-  }
-  
-  /* Responsiveness */
-  @media screen and (max-width: 768px) {
-     nav {
-         flex-direction: column;
-         align-items: center;
-     }
-  
-     nav a {
-         display: block;
-         width: 100%;
-         text-align: center;
-         padding: 10px 0;
-     }
-  }
-  
-  @media screen and (max-width: 480px) {
-     header {
-         font-size: 18px;
-     }
-  
-     main {
-         padding: 10px;
-         font-size: 16px;
-     }
-  
-     footer {
-         font-size: 14px;
-     }
-  }
-  
-  
-  
-  /* <!-- Colors  --> */
-  /* White Smoke: F3F3F2
-     Khaki: BAA896
-     Light Sky Blue: A2CFFE
-     Timberwolf (grey): D3D3D3 */
+}
+
+@media screen and (max-width: 480px) {
+   header {
+       font-size: 18px;
+   }
+
+   main {
+       padding: 10px;
+       font-size: 16px;
+   }
+
+   footer {
+       font-size: 14px;
+   }
+}
+
+
+
+/* <!-- Colors  --> */
+/* White Smoke: F3F3F2
+   Khaki: BAA896
+   Light Sky Blue: A2CFFE
+   Timberwolf (grey): D3D3D3 */
