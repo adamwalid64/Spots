@@ -1,7 +1,9 @@
+
 /* Body CSS -------------------------*/
 body {
    background-color: #D3D3D3;
   }
+  
   /* Top Bar CSS ----------------------*/
   div.top-bar {
      /* Properties */
@@ -11,15 +13,76 @@ body {
      /* Height/Width */
      width: 100%;
      height: 15vh;
+  
      /* Allignment */
      top: 0;
      left: 0;
+  
      /* Color */
      background-color: #A2CFFE;
+  
+     /* Flex attributes */
+     justify-content: center;
   }
-  div.top-bar-logo {
+  
+  /* Logo Div */
+  #top-bar-logo {
+     width: 22.7vh; 
+     height: auto;
+  
+  }
+  
+  /* Sign/in/up Container ----------------*/
+  .top-bar-button-container {
+     position: absolute;
+     width: 15vw;
+     height: 7.5vh;
+     right: 5vh;
+     top: 4vh;
+  
+     display: flex;
+     justify-content: center;
+     gap: 1vw;
+  }
+  /* Buttons */
+  .btn, .btn-primary{
      
   }
+  
+  .btn, .btn-outline-primary {
+  
+  }
+  
+  /* Dropdown Button Container */
+  .Social-drop-down{
+     position: absolute;
+     width: 7vw;
+     height: 7.5vh;
+     left: 10vh;
+     top: 4vh;
+  
+     display: flex;
+     justify-content: center;
+     align-items: center;
+  }
+  /* Social Media dropdown */
+  .btn, .btn-primary, .dropdown-toggle {
+  
+  }
+  
+  /* Social Media icons */
+  .fa-facebook {
+     color: white;
+   }
+   
+   .fa-twitter {
+     color: white;
+   }
+  
+   .fa-instagram {
+     color: white;
+   }
+  
   /* Footer  */
   footer{
      position: fixed;
@@ -28,11 +91,13 @@ body {
      background-color: #A2CFFE;
      border-top: 2px solid #BAA896;
   }
+  
   .footer-nav {
      display: flex;
      justify-content: space-around;
      padding: 10px 0;
   }
+  
   .footer-nav a {
      color: #F3F3F2;
      text-decoration: none;
@@ -40,16 +105,19 @@ body {
      text-align: center;
      font-size: 14px;
   }
+  
   .footer-nav a:hover {
      background-color: #575757;
      border-radius: 4px;
   }
+  
   /* Responsiveness */
   @media screen and (max-width: 768px) {
      nav {
          flex-direction: column;
          align-items: center;
      }
+  
      nav a {
          display: block;
          width: 100%;
@@ -57,18 +125,23 @@ body {
          padding: 10px 0;
      }
   }
+  
   @media screen and (max-width: 480px) {
      header {
          font-size: 18px;
      }
+  
      main {
          padding: 10px;
          font-size: 16px;
      }
+  
      footer {
          font-size: 14px;
      }
   }
+  
+  
   
   /* <!-- Colors  --> */
   /* White Smoke: F3F3F2
