@@ -1,15 +1,12 @@
+/* Body CSS -------------------------*/
 body {
    background-color: #D3D3D3;
-   display: grid;
-   grid-template-rows: 1fr 10rem auto;
-   grid-template-areas: "main" "." "footer";
-   overflow-x: hidden;
-   background: #F5F7FA;
-   min-height: 100vh;
-   font-family: 'Open Sans', sans-serif;
+   margin: 0;
+   padding: 0;
 }
 
-div.top-bar {
+/* Top Bar CSS ----------------------*/
+header {
    position: absolute;
    display: flex;
    width: 100%;
@@ -18,13 +15,19 @@ div.top-bar {
    left: 0;
    background-color: #A2CFFE;
    justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   padding: 10px;
 }
 
+/* Logo Div */
 #top-bar-logo {
    width: 22.7vh;
    height: auto;
+   margin-bottom: 10px;
 }
 
+/* Sign/in/up Container ----------------*/
 .top-bar-button-container {
    position: absolute;
    width: 15vw;
@@ -36,12 +39,12 @@ div.top-bar {
    gap: 1vw;
 }
 
+/* Buttons */
 .btn, .btn-primary {
+   font-size: 14px;
 }
 
-.btn, .btn-outline-primary {
-}
-
+/* Dropdown Button Container */
 .Social-drop-down {
    position: absolute;
    width: 7vw;
@@ -53,42 +56,41 @@ div.top-bar {
    align-items: center;
 }
 
-.btn, .btn-primary, .dropdown-toggle {
-}
-
-.fa-facebook {
+/* Social Media icons */
+.fa-facebook, .fa-twitter, .fa-instagram {
    color: white;
+   margin: 0 5px;
+   font-size: 20px;
 }
 
-.fa-twitter {
-   color: white;
-}
-
-.fa-instagram {
-   color: white;
-}
-
+/* Footer --------------------------*/
 footer {
    position: fixed;
    bottom: 0;
    width: 100%;
    background-color: #A2CFFE;
    border-top: 2px solid #BAA896;
-   display: grid;
-   position: relative;
-   grid-area: footer;
-   min-height: 12rem;
+   text-align: center;
+   padding: 10px 0;
 }
 
 .footer-nav {
    display: flex;
    justify-content: space-around;
-   padding: 10px 0;
+   flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
+.footer-nav a {
+   padding: 10px;
+   text-decoration: none;
+   color: #000;
+   font-size: 14px;
+}
+
+/* Footer Button Styling */
 .footer-button {
    appearance: none;
-   background-color: #A2CFFE;
+   background-color: #A2CFFE; /* Blue background */
    border-width: 0;
    box-sizing: border-box;
    color: #000000;
@@ -106,65 +108,119 @@ footer {
    position: relative;
    text-align: center;
    text-decoration: none;
-   text-rendering: geometricprecision;
    text-transform: uppercase;
    transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),
-       background-color 100ms cubic-bezier(.694, 0, 0.335, 1),
-       color 100ms cubic-bezier(.694, 0, 0.335, 1);
+               background-color 100ms cubic-bezier(.694, 0, 0.335, 1),
+               color 100ms cubic-bezier(.694, 0, 0.335, 1),
+               box-shadow 200ms cubic-bezier(.694, 0, 0.335, 1);
    user-select: none;
    -webkit-user-select: none;
    touch-action: manipulation;
    vertical-align: baseline;
    white-space: nowrap;
-   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-   border-radius: 8px;
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Initial shadow */
+   backdrop-filter: blur(3px); /* Softer blur for cartoony effect */
 }
 
+/* Curtain Effect */
 .footer-button:before {
-   content: '';
-   display: block;
-   position: absolute;
-   top: -6px;
-   left: -6px;
-   right: -6px;
-   bottom: -6px;
-   border: 2px solid #A2CFFE;
-   border-radius: 8px;
-   opacity: 0;
-   transition: all 300ms cubic-bezier(.694, 0, 0.335, 1);
-}
-
-.footer-button:hover {
-   background-color: #8EACE4;
-   color: #ffffff;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2); /* Lighter, more transparent effect */
+  backdrop-filter: blur(6px); /* Softer blur */
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  transition: clip-path 0.5s cubic-bezier(.165, 0.84, 0.44, 1);
+  z-index: 0;
 }
 
 .footer-button:hover:before {
-   opacity: 1;
-   transform: scale(1.1);
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%); /* Reveal full button */
 }
 
-.footer-button:active {
-   background-color: #6D94C7;
-   color: #ffffff;
+/* Footer Button Hover Effect */
+.footer-button:hover {
+   color: #000000;
+   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+   background-color: rgba(162, 207, 254, 0.4); /* More transparent on hover */
 }
 
-.footer-button:active:before {
-   transform: scale(1.05);
-   opacity: 0.9;
+/* Button Text */
+.footer-button span {
+   position: relative;
+   z-index: 1; /* Ensures text stays on top of the curtain */
 }
 
+/* Form Styling */
+#spotForm {
+   margin-top: 40px;
+   text-align: center;
+   width: 100%;
+   max-width: 800px;
+}
+
+input[type="number"] {
+   width: 100%;
+   max-width: 200px;
+   margin: 5px;
+   padding: 10px;
+   border-radius: 5px;
+   border: 1px solid #ccc;
+}
+
+button {
+   padding: 10px 20px;
+   margin-top: 10px;
+   border: none;
+   background-color: #007bff;
+   color: white;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+button:hover {
+   background-color: #0056b3;
+}
+
+/* Map container adjustments */
+#map {
+   width: 90%;
+   height: 500px;
+   margin-top: 50px;
+}
+
+/* Responsiveness */
 @media screen and (max-width: 768px) {
-   nav {
+   header {
        flex-direction: column;
        align-items: center;
+       height: auto;
    }
 
-   nav a {
-       display: block;
+   .top-bar-button-container {
+       position: relative;
+       top: 10px;
        width: 100%;
-       text-align: center;
+       justify-content: center;
+   }
+
+   .Social-drop-down {
+       position: relative;
+       top: 10px;
+   }
+
+   .footer-nav {
+       flex-direction: column;
+       align-items: center;
        padding: 10px 0;
+   }
+
+   .footer-button {
+       padding: 10px 15px;
+       width: 100%;
    }
 }
 
@@ -181,11 +237,28 @@ footer {
    footer {
        font-size: 14px;
    }
+
+   .top-bar-button-container {
+       width: 100%;
+       right: unset;
+       left: unset;
+       top: 20px;
+       justify-content: center;
+   }
+
+   .Social-drop-down {
+       left: unset;
+       right: unset;
+       top: 20px;
+   }
+
+   .footer-nav {
+       padding: 10px 0;
+   }
 }
 
 
-
-/* <!-- Colors  --> */
+/* Colors  */
 /* White Smoke: F3F3F2
    Khaki: BAA896
    Light Sky Blue: A2CFFE
