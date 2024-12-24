@@ -101,7 +101,7 @@ footer{
 /* Footer Button Styling */
 .footer-button {
    appearance: none;
-   background-color: #FFFFFF;
+   background-color: #A2CFFE;
    border-width: 0;
    box-sizing: border-box;
    color: #000000;
@@ -134,7 +134,7 @@ footer{
  .footer-button:before {
    animation: opacityFallbackOut 0.5s step-end forwards;
    backface-visibility: hidden;
-   background-color: #ebebeb;
+   background-color: #D3D3D3;
    clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
    content: "";
    height: 100%;
@@ -152,8 +152,8 @@ footer{
    clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
  }
  
- .footer-button:after {
-   background-color: #ffffff;
+ .footer-button:hover {
+   color: #000000;
  }
  
  .footer-button span {
