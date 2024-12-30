@@ -5,10 +5,8 @@
     <meta name="spots-home" content="width=device-width, initial-scale=1.0" />
     <title>Spots</title>
 
-    <!-- CSS Sheet Link -->
     <link rel="stylesheet" href="Style.css" />
 
-    <!-- Boostrap Link -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
@@ -16,105 +14,28 @@
       crossorigin="anonymous"
     />
 
-    <!-- Social Media Icon Link -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
-    <style>
-      /* General reset for margins/padding */
-      body,
-      html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-      }
-
-      /* Centering the content */
-      .content-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start; /* Align content at the top */
-        height: 100%;
-        padding: 30px 0; /* Added more padding at the top to move the content down */
-      }
-
-      /* User input form styling */
-      #spotForm {
-        margin-top: 40px; /* Move form a bit higher */
-        text-align: center;
-        width: 100%;
-        max-width: 800px; /* Form width should also be responsive */
-      }
-
-      input[type="number"] {
-        width: 100%;
-        max-width: 200px;
-        margin: 5px;
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-      }
-
-      button {
-        padding: 10px 20px;
-        margin-top: 10px;
-        border: none;
-        background-color: #007bff;
-        color: white;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-
-      button:hover {
-        background-color: #0056b3;
-      }
-
-      /* Header and Footer Centering */
-      header,
-      footer {
-        text-align: center;
-      }
-
-      /* Map container adjustments */
-      #map {
-        width: 90%; /* Adjust width of the map */
-        height: 500px; /* Adjust height to make the map shorter */
-        margin-top: 50px; /* Bring map lower on the page */
-      }
-    </style>
   </head>
   <body>
-    <!-- Bootstrap script link -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
 
-    <!-- Header Section -->
-    <header>
-      <!-- Logo -->
+    <div class="top-bar">
       <div class="top-bar-logo-div">
-        <img
-          id="top-bar-logo"
-          src="./Resources/enuff-skully-complete-skateboard-rx.webp"
-          alt="Logo"
-        />
+        <h1 id="logo">SPOTS</h1>
       </div>
 
-      <!-- Sign/in/up Button Container -->
       <div class="top-bar-button-container">
         <button type="button" class="btn btn-outline-primary">Log in</button>
         <button class="btn btn-primary" type="submit">Sign up</button>
       </div>
 
-      <!-- Social Media dropdown Container -->
       <div class="Social-drop-down">
         <div class="dropdown">
           <button
@@ -134,75 +55,17 @@
           </ul>
         </div>
       </div>
-    </header>
-
-    <!-- Content Wrapper with Map and Form -->
-    <div class="content-wrapper">
-      <!-- Map Section -->
-      <div id="map"></div>
-
-      <!-- User Input Form -->
-      <form id="spotForm">
-        <label for="latitude">Latitude: </label>
-        <input type="number" id="latitude" name="latitude" required />
-        <br />
-        <label for="longitude">Longitude: </label>
-        <input type="number" id="longitude" name="longitude" required />
-        <br />
-        <button type="submit">Add Spot</button>
-      </form>
     </div>
 
-    <!-- Footer Section -->
     <footer>
       <nav class="footer-nav">
-        <a href="#" class="footer-button">Home</a>
-        <a href="#" class="footer-button">Skate</a>
-        <a href="#" class="footer-button">Surf</a>
-        <a href="#" class="footer-button">Snowboard</a>
+        <button class="footer-button"><a href="#home">Home</a></button>
+        <button class="footer-button"><a href="#skate">Skate</a></button>
+        <button class="footer-button"><a href="#surf">Surf</a></button>
+        <button class="footer-button">
+          <a href="#snowboard">Snowboard</a>
+        </button>
       </nav>
     </footer>
-
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script>
-      // Initialize the map
-      var map = L.map("map").setView([51.505, -0.09], 2); // Default coordinates (Zoomed out)
-
-      // Set up the map tiles (OpenStreetMap in this case)
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      }).addTo(map);
-
-      // Function to add a red bubble (marker) on the map
-      function addSpot(lat, lon) {
-        var marker = L.marker([lat, lon], {
-          icon: L.divIcon({
-            className: "leaflet-div-icon",
-            html: '<div style="background-color:red; border-radius:50%; width:10px; height:10px;"></div>',
-            iconSize: [10, 10],
-          }),
-        }).addTo(map);
-
-        // You can also add a popup to describe the spot
-        marker.bindPopup("<b>Cool Spot!</b>").openPopup();
-      }
-
-      // Form submission handler
-      document
-        .getElementById("spotForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault(); // Prevent form from submitting the usual way
-
-          var latitude = parseFloat(document.getElementById("latitude").value);
-          var longitude = parseFloat(
-            document.getElementById("longitude").value
-          );
-
-          // Add a spot at the provided coordinates
-          addSpot(latitude, longitude);
-        });
-    </script>
   </body>
 </html>
